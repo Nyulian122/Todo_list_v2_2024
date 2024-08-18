@@ -26,7 +26,30 @@
                         <button type="button" onclick="skipLogin()">Probar Beta</button>
                         <button type="submit" onclick="login()">Iniciar</button>
                     </div>
-                    <button type="button" onclick="createAccount()">Crea Cuenta</button>
+                    <button type="button" onclick="showCreateAccountModal()">Crear Cuenta</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Create Account Modal -->
+        <div id="create-account-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('create-account-modal')">&times;</span>
+                <h2>Crear Cuenta</h2>
+                <form id="create-account-form">
+                    <label for="new-username">Usuario</label>
+                    <input type="text" id="new-username" name="new-username" required>
+                    
+                    <label for="new-email">Correo</label>
+                    <input type="email" id="new-email" name="new-email" required>
+                    
+                    <label for="new-password">Contraseña</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                    
+                    <label for="confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    
+                    <button type="button" onclick="submitCreateAccount()">Crear Cuenta</button>
                 </form>
             </div>
         </div>
@@ -39,18 +62,7 @@
             </header>
             <main>
                 <div id="tasks" class="task-list">
-                    <div class="task-item">
-                        <div class="task-name">
-                            <input type="checkbox">
-                            <span>Nombre de la tarea en general</span>
-                        </div>
-                        <div class="task-assigned">
-                            <img class="imgperfil1" src="https://via.placeholder.com/40" alt="User">
-                        </div>
-                        <div class="task-date">Agosto 14</div>
-                        <div class="task-status">En progreso</div>
-                    </div>
-                    <!-- Más tareas se pueden agregar dinámicamente aquí -->
+                    <!-- Tasks will be dynamically added here -->
                 </div>
             </main>
         </div>

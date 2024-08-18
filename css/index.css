@@ -7,17 +7,36 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f7f8fa;
+  background-image: url('https://cdn.pixabay.com/photo/2018/02/03/15/40/landscape-3127859_640.jpg'); /* Imagen de fondo basada en la imagen proporcionada */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
-  width: 800px;
-  height: 500px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
+  width: 750px;
+  height: 750px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(5px);
+  padding: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Panel visibility */
@@ -36,6 +55,18 @@ body {
   flex-direction: column;
   opacity: 1;
   transform: scale(1);
+  animation: zoomIn 0.5s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Login Panel */
@@ -48,72 +79,119 @@ body {
 }
 
 .login-left {
-  background-image: url('/mnt/data/Captura_desde_2024-08-05_16-23-04.png');
-  background-size: cover;
-  background-position: center;
+  color: white; /* Texto blanco para contraste */
+  border-radius: 15px 0 0 15px;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .login-right {
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
+  padding: 40px;
+  animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .login-right h2 {
   color: #333;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .login-right form {
   width: 100%;
+  max-width: 400px;
 }
 
 .login-right form label {
   color: #555;
   font-weight: bold;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .login-right form input {
   padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  width: calc(100% - 26px);
+  border-radius: 30px;
+  width: 100%;
+  background-color: #f7f7f7;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.login-right form input:focus {
+  border: 1px solid #a93545;
+  transform: scale(1.05);
 }
 
 .login-right .buttons {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
 }
 
-.login-right button {
+.login-right .buttons button {
   padding: 10px 20px;
   background-color: #a93545;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 45%;
 }
 
-.login-right button:hover {
+.login-right .buttons button:hover {
   background-color: #4d4143;
+  transform: scale(1.1);
 }
 
 button[type="button"]:nth-child(3) {
   margin-top: 20px;
+  width: auto;
 }
 
 /* Tasks Panel */
 header {
-  background-color:#f7e6be;
-  color: black;
+  background-color: #3a3a3a; /* Color oscuro que combina con el tema general */
+  color: white;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px 15px 0 0;
+  border-radius: 20px 20px 0 0;
+  animation: slideInDown 1s ease-in-out;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 header h1 {
@@ -130,16 +208,18 @@ header h1 {
   text-align: center;
   line-height: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .new-task-button:hover {
   background-color: #a93545;
+  transform: rotate(360deg);
 }
 
 main {
   padding: 20px;
   overflow-y: auto;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .task-list {
@@ -154,11 +234,12 @@ main {
   background-color: #f9f9f9;
   border-radius: 8px;
   margin-bottom: 10px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .task-item:hover {
   background-color: #f1f1f1;
+  transform: translateX(10px);
 }
 
 .task-name {
@@ -169,31 +250,48 @@ main {
 .task-name input[type="checkbox"] {
   margin-right: 10px;
   transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.task-name input[type="checkbox"]:checked {
+  transform: scale(1.5);
 }
 
 .task-assigned img {
-  width: 40px;
+  margin-top: 15px;
+  width: auto;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #a93545;
+  object-fit: cover;
+}
+
+.task-assigned {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 
 .task-date {
   color: #777;
 }
 
-imgperfil1
-
 .task-status {
   padding: 6px 12px;
   border-radius: 8px;
   color: white;
   background-color: #485755;
+  transition: transform 0.3s ease;
+}
+
+.task-status:hover {
+  transform: scale(1.1);
 }
 
 /* Task Form Panel */
 form.task-form {
   padding: 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
 form.task-form label {
@@ -205,21 +303,88 @@ form.task-form input, form.task-form select {
   padding: 12px;
   margin-top: 8px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 30px;
   width: 100%;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+form.task-form input:focus, form.task-form select:focus {
+  border: 1px solid #a93545;
+  transform: scale(1.05);
 }
 
 button[type="button"] {
   margin-top: 20px;
   padding: 12px 20px;
-  background-color: #a93545 ;
+  background-color: #a93545;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button[type="button"]:hover {
-  background-color: #4d4143 ;
+  background-color: #4d4143;
+  transform: scale(1.1);
+}
+
+/* New CSS */
+.new-style-class {
+  color: red; /* Ejemplo de una nueva clase para ilustrar cómo se añade nuevo CSS */
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Ocultado por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  z-index: 1; /* En primer plano */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Scroll si es necesario */
+  background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% desde el top, centrado horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho del modal */
+  max-width: 500px; /* Ancho máximo del modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form label,
+.modal form input,
+.modal form button {
+  margin-bottom: 10px;
+}
+
+.modal form button {
+  align-self: flex-end;
 }

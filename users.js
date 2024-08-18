@@ -1,0 +1,22 @@
+const usuarios = [
+    { usuario: 'usuario1', contrasena: 'Contrasena1!', correo: 'usuario1@correo.com' },
+    { usuario: 'usuario2', contrasena: 'Contrasena2!', correo: 'usuario2@correo.com' },
+    { usuario: 'usuario3', contrasena: 'Contrasena3!', correo: 'usuario3@correo.com' },
+    { usuario: 'usuario4', contrasena: 'Contrasena4!', correo: 'usuario4@correo.com' },
+    { usuario: 'usuario5', contrasena: 'Contrasena5!', correo: 'usuario5@correo.com' },
+    { usuario: 'usuario6', contrasena: 'Contrasena6!', correo: 'usuario6@correo.com' },
+    { usuario: 'usuario7', contrasena: 'Contrasena7!', correo: 'usuario7@correo.com' },
+    { usuario: 'usuario8', contrasena: 'Contrasena8!', correo: 'usuario8@correo.com' },
+    { usuario: 'usuario9', contrasena: 'Contrasena9!', correo: 'usuario9@correo.com' },
+    { usuario: 'usuario10', contrasena: 'Contrasena10!', correo: 'usuario10@correo.com' },
+    { usuario: 'usuario11', contrasena: 'Contrasena11!', correo: 'usuario11@correo.com' },
+    { usuario: 'usuario12', contrasena: 'Contrasena12!', correo: 'usuario12@correo.com' },
+    { usuario: 'usuario13', contrasena: 'Contrasena13!', correo: 'usuario13@correo.com' },
+    { usuario: 'usuario14', contrasena: 'Contrasena14!', correo: 'usuario14@correo.com' },
+    { usuario: 'usuario15', contrasena: 'Contrasena15!', correo: 'usuario15@correo.com' },
+    { usuario: 'usuario16', contrasena: 'Contrasena16!', correo: 'usuario16@correo.com' },
+    { usuario: 'usuario17', contrasena: 'Contrasena17!', correo: 'usuario17@correo.com' },
+    { usuario: 'usuario18', contrasena: 'Contrasena18!', correo: 'usuario18@correo.com' },
+    { usuario: 'usuario19', contrasena: 'Contrasena19!', correo: 'usuario19@correo.com' },
+    { usuario: 'usuario20', contrasena: 'Contrasena20!', correo: 'usuario20@correo.com' }
+];

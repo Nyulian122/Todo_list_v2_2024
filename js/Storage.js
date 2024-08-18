@@ -7,7 +7,7 @@ function SaveAsignaciones(asignaciones) {
 
 function GuardarAsignaciones(asignaciones) {
 
-    return JSON.parse(localStorage.getItem(DERECK_CARRANZA)) || []; // Este     
+    return JSON.parse(localStorage.getItem(DERECK_CARRANZA)) || []; // Este retorna una lista vacia
 }
 
 export {DERECK_CARRANZA, SaveAsignaciones, GuardarAsignaciones};
